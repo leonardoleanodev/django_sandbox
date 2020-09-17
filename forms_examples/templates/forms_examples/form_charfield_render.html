@@ -1,0 +1,5 @@
+<form action="{% url 'forms_examples:form_charfield_render' %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
