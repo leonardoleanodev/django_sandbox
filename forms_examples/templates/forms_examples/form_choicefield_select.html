@@ -1,0 +1,5 @@
+<form action="{% url 'forms_examples:form_choicefield_select' %}" method="post">
+    {% csrf_token %}
+    {{ form_choicefield_select }}
+    <input type="submit" value="Submit">
+</form>

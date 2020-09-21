@@ -1,4 +1,4 @@
-<form action="{% url 'forms_examples:form_choice_flexible' %}" method="post">
+<form action="{% url 'forms_examples:form_choicefield_select' %}" method="post">
     {% csrf_token %}
     {{ form_choice_flexible }}
     <input type="submit" value="Submit">
