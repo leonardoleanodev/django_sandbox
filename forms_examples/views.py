@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from forms_examples.forms import (FormCharField, FormChoiceFieldSelect, FormChoiceFlexible)
+from forms_examples.forms import (FormCharField, FormChoiceFieldSelect,
+                                  FormChoiceFlexible, FormChoiceCascade)
 
 # TODO: add an index page with all links to every tipe django example
 
@@ -27,6 +28,20 @@ def form_choicefield_select_render(request):
     return render(request, 'forms_examples/form_choicefield_select.html', html_data)
 
 def form_choicefield_flexible_render(request):
+    """
+    url: /forms/form_choice_flexible
+    url shortcut: 'forms_examples:form_choice_flexible'
+
+    Parameters
+    ----------
+    request : [type]
+        [description]
+
+    Returns
+    -------
+    [type]
+        [description]
+    """
     choices = [("",""),
                 ("a","a"),
                 ("b","b")]
@@ -36,5 +51,25 @@ def form_choicefield_flexible_render(request):
     return render(request, 'forms_examples/form_choice_flexible.html', html_data)
 
 def form_choice_cascade(request):
+    """
+    url: /forms/form_choice_cascade
+    url shortcut: 'forms_examples:form_choice_cascade'
+
+    Parameters
+    ----------
+    request : [type]
+        [description]
+
+    Returns
+    -------
+    [type]
+        [description]
+    """
+    if request.method == 'POST':
+        form_choice_cascade = FormChoiceCascade(request.POST)
+    else:
+        form_choice_cascade = FormChoiceCascade()
+
+    html_data = {'form_choice_cascade': form_choice_cascade}
 
     return render(request, 'forms_examples/form_choice_cascade.html', html_data)

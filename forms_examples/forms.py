@@ -26,18 +26,30 @@ class FormChoiceFlexible(forms.Form):
         super(FormChoiceFlexible, self).__init__()
         self.fields['example_form_choice_flexible'].choices = choices
 
-class FormChoiceCascade(form.Form):
-    Choices = (
-        ('item-1',
-            ('item-1-1','item-1-1'),
-            ('item-1-2','item-1-2'),
-        ),
-        ('item-2',
-            ('item-2-1','item-2-1'),
-            ('item-2-2','item-2-2'),
-        )
-    )
+class FormChoiceCascade(forms.Form):
+    CHOICES = [('item-1',(
+                    ('item-1-1','item-1-1'),
+                    ('item-1-2','item-1-2'),
+                    )
+                ),
+                ('item-2',(
+                    ('item-2-1','item-2-1'),
+                    ('item-2-2','item-2-2'),
+                    )
+                ),
+                ('item-3',(
+                    ('item-3-1',
+                        (('item-3-1-1','item-3-1-1'),('item-3-1-2','item-3-1-2'))
+                        ),
+                    ('item-3-2','item-3-2'),
+                    )
+                )
+                ]
+
+    select_options = {
+        'class':'form-choices-cascade',
+        }
     example_choice_cascade = forms.ChoiceField(
-        choices = choices, 
-        widget=forms.Select(select_options)
+        choices = CHOICES, 
+        widget = forms.Select(select_options)
         )
