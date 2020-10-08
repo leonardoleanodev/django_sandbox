@@ -2,6 +2,8 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from forms_examples.forms import (FormCharField, FormChoiceFieldSelect, FormChoiceFlexible)
 
+# TODO: add an index page with all links to every tipe django example
+
 # Create your views here.
 def view_sample(request):
     return HttpResponse("Hello, world. You're at the polls index.")
