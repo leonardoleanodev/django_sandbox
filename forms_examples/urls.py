@@ -8,4 +8,5 @@ urlpatterns = [
     path("form_charfield_render", views.form_charfield_render, name='form_charfield_render'),
     path("form_choicefield_select_render",views.form_choicefield_select_render, name='form_choicefield_select'),
     path("form_choice_flexible",views.form_choicefield_flexible_render, name='form_choice_flexible'),
+    path("form_choice_cascade",views.form_choice_cascade, name='form_choice_cascade'),
 ]

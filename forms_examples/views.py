@@ -32,3 +32,7 @@ def form_choicefield_flexible_render(request):
 
     html_data={'form_choice_flexible':form_choice_flexible}
     return render(request, 'forms_examples/form_choice_flexible.html', html_data)
+
+def form_choice_cascade(request):
+
+    return render(request, 'forms_examples/form_choice_cascade.html', html_data)

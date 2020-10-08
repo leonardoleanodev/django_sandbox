@@ -1,0 +1,6 @@
+# TODO:  edit here to make the cascade field
+<form action="{% url 'forms_examples:form_choicefield_select' %}" method="post">
+    {% csrf_token %}
+    {{ form_choice_flexible }}
+    <input type="submit" value="Submit">
+</form>
