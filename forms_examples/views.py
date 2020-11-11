@@ -53,7 +53,7 @@ def form_choicefield_flexible_render(request):
 def form_choice_cascade(request):
     """
     url: /forms/form_choice_cascade
-    url shortcut: 'forms_examples:form_choice_cascade'
+    url-shortcut: 'forms_examples:form_choice_cascade'
 
     Parameters
     ----------

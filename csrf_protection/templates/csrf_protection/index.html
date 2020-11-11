@@ -1,0 +1,27 @@
+<header>
+CSRF INITIAL PAGE
+</header>
+<p>The project is configured with the Middleware:</p>
+<p>django.middleware.csrf.CsrfViewMiddleware</p>
+<div>
+    Submit Without CSRFTOKEN - to view without protection
+    <form action="{% url 'csrf_protection:without_protection' %}" method="post" >
+        <input type="submit" value="Submit">
+    </form>
+<div>
+
+<div>
+    Submit Without CSRFTOKEN - to view with standard protection (should popup a 403)
+    <form action="{% url 'csrf_protection:with_standard_protection' %}" method="post" >
+        <input type="submit" value="Submit">
+    </form>
+<div>
+
+
+<div>
+    Submit With CSRFTOKEN - to view with standard protection
+    <form action="{% url 'csrf_protection:with_standard_protection' %}" method="post" >
+        {% csrf_token %}
+        <input type="submit" value="Submit">
+    </form>
+<div>

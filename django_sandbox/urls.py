@@ -19,5 +19,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('http_response/', include('http_response.urls') ),
-    path('forms/', include('forms_examples.urls') )
+    path('forms/', include('forms_examples.urls') ),
+    path('csrf/',include('csrf_protection.urls') )
 ]

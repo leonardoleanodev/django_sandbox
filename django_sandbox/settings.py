@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'http_response.apps.HttpResponseConfig', # add to register http_reponse app
     'forms_examples.apps.FormsExamplesConfig', # add to register forms_examples
+    'csrf_protection.apps.CsrfProtectionConfig', # add to register csrf_protection
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
